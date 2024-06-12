@@ -16,7 +16,7 @@ const translate = (id, english) => {
 const motion = function (isInitialSetup, isStage, targetId) {
     return `
     <category name="%{BKY_CATEGORY_MOTION}" id="motion" colour="#FF0000" secondaryColour="#000000">
-        <label text="Work in Progress></label>
+        <label text="Work in Progress"></label>
         ${categorySeparator}
     </category>
     `;
