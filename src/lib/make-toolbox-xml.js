@@ -34,30 +34,11 @@ const xmlEscape = function (unsafe) {
     });
 };
 
-const variables = function (isInitialSetup, isStage, targetId) {
+const control = function (isInitialSetup, isStage, targetId) {
     return `
-    <category name="%{BKY_CATEGORY_VARIABLES}" id="variables" colour="#FF8C1A" secondaryColour="#DB6E00">
-        <block type="data_setvariableto"></block>
-        <block type="data_changevariableby"></block>
-        <block type="data_variable"></block>
-    </category>
-    `;
-};
-
-/*
-custom="VARIABLE"
-custom="LIST">
-*/
-
-const lists = function (isInitialSetup, isStage, targetId) {
-    return `
-    <category name="Lists" id="lists" colour="#FF661A" secondaryColour="#FF5500">
-        <block type="data_listcontents"></block>
-        <block type="data_addtolist"></block>
-        <block type="data_deleteoflist"></block>
-        <block type="data_arraylist"></block>
-        <block type="data_insertatlist"></block>
-        <block type="data_replaceitemoflist"></block>
+    <category name="%{BKY_CATEGORY_CONTROL}" id="control" colour="#FF0000" secondaryColour="#000000">
+        <label text="Work in Progress"></label>
+        ${categorySeparator}
     </category>
     `;
 };
@@ -144,16 +125,14 @@ const makeToolboxXML = function (isInitialSetup, isStage = true, targetId, categ
         // return `undefined`
     };
     const motionXML = moveCategory('motion') || motion(isInitialSetup, isStage, targetId);
-    const variablesXML = moveCategory('data') || variables(isInitialSetup, isStage, targetId);
-    const listsXML = moveCategory('lists') || lists(isInitialSetup, isStage, targetId);
+    const controlXML = moveCategory('control') || control(isInitialSetup, isStage, targetId);
     const myBlocksXML = moveCategory('procedures') || myBlocks(isInitialSetup, isStage, targetId);
     const liveTestsXML = moveCategory('liveTests') || liveTests(isLiveTest);
 
     const everything = [
         xmlOpen,
         motionXML, gap,
-        variablesXML, gap,
-        listsXML, gap,
+        controlXML, gap,
         myBlocksXML, gap,
         isLiveTest ? [liveTestsXML, gap] : ''
     ];
