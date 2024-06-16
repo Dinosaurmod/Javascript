@@ -1,5 +1,4 @@
 import bindAll from 'lodash.bindall';
-import {EDIT_MENU_XPATH} from './menu-xpaths';
 
 class RubyHelper {
     constructor (seleniumHelper) {
@@ -11,7 +10,6 @@ class RubyHelper {
 
         this.seleniumHelper = seleniumHelper;
         this.clickText = seleniumHelper.clickText;
-        this.clickXpath = seleniumHelper.clickXpath;
     }
 
     get driver () {
@@ -31,7 +29,6 @@ class RubyHelper {
         await this.clickText('Ruby', '*[@role="tab"]');
         await this.fillInRubyProgram(code);
         await this.clickText('Code', '*[@role="tab"]');
-        await this.clickXpath(EDIT_MENU_XPATH);
         await this.clickText('Generate Ruby from Code');
         await this.clickText('Ruby', '*[@role="tab"]');
         expect(await this.currentRubyProgram()).toEqual(`${code}\n`);
