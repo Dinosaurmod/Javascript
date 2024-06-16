@@ -14,6 +14,7 @@ import Blocks from '../../containers/blocks.jsx';
 import CostumeTab from '../../containers/costume-tab.jsx';
 import TargetPane from '../../containers/target-pane.jsx';
 import SoundTab from '../../containers/sound-tab.jsx';
+import RubyTab from '../../containers/ruby-tab.jsx';
 import FilesTab from '../../containers/files-tab.jsx';
 import StageWrapper from '../../containers/stage-wrapper.jsx';
 import Loader from '../loader/loader.jsx';
@@ -130,6 +131,7 @@ const GUIComponent = props => {
         onToggleLoginOpen,
         onActivateCostumesTab,
         onActivateSoundsTab,
+        onActivateJavascriptTab,
         onActivateFilesTab,
         onActivateTab,
         onClickLogo,
@@ -147,6 +149,7 @@ const GUIComponent = props => {
         onTelemetryModalOptOut,
         showComingSoon,
         soundsTabVisible,
+        rubyTabVisible,
         filesTabVisible,
         stageSizeMode,
         targetIsStage,
@@ -368,6 +371,20 @@ const GUIComponent = props => {
                                             id="gui.gui.soundsTab"
                                         />
                                     </Tab>
+                                    <Tab
+                                        className={tabClassNames.tab}
+                                        onClick={onActivateJavascriptTab}
+                                    >
+                                        <img
+                                            draggable={false}
+                                            src={codeIcon}
+                                        />
+                                        <FormattedMessage
+                                            defaultMessage="Javascript"
+                                            description="Button to get to the javascript panel"
+                                            id="gui.gui.javascriptTab"
+                                        />
+                                    </Tab>
                                 </TabList>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     <Box className={styles.blocksWrapper}>
@@ -407,6 +424,12 @@ const GUIComponent = props => {
                                 </TabPanel>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     {soundsTabVisible ? <SoundTab vm={vm} /> : null}
+                                </TabPanel>
+                                <TabPanel className={tabClassNames.tabPanel}>
+                                    <RubyTab
+                                        isVisible={rubyTabVisible}
+                                        vm={vm}
+                                    />
                                 </TabPanel>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     {filesTabVisible ? <FilesTab vm={vm} /> : null}
@@ -482,6 +505,7 @@ GUIComponent.propTypes = {
     logo: PropTypes.string,
     onActivateCostumesTab: PropTypes.func,
     onActivateSoundsTab: PropTypes.func,
+    onActivateJavascriptTab: PropTypes.func,
     onActivateFilesTab: PropTypes.func,
     onActivateTab: PropTypes.func,
     onClickAccountNav: PropTypes.func,
@@ -508,6 +532,7 @@ GUIComponent.propTypes = {
     onToggleLoginOpen: PropTypes.func,
     renderLogin: PropTypes.func,
     showComingSoon: PropTypes.bool,
+    rubyTabVisible: PropTypes.bool,
     soundsTabVisible: PropTypes.bool,
     filesTabVisible: PropTypes.bool,
     stageSizeMode: PropTypes.oneOf(Object.keys(STAGE_SIZE_MODES)),

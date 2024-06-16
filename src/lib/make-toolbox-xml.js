@@ -15,7 +15,7 @@ const translate = (id, english) => {
 /* eslint-disable no-unused-vars */
 const motion = function (isInitialSetup, isStage, targetId) {
     return `
-    <category name="%{BKY_CATEGORY_MOTION}" id="motion" colour="#FF0000" secondaryColour="#000000">
+    <category name="%{BKY_CATEGORY_MOTION}" id="motion" colour="#4C97FF" secondaryColour="#3373CC">
         <label text="Work in Progress"></label>
         ${categorySeparator}
     </category>
@@ -36,8 +36,14 @@ const xmlEscape = function (unsafe) {
 
 const control = function (isInitialSetup, isStage, targetId) {
     return `
-    <category name="%{BKY_CATEGORY_CONTROL}" id="control" colour="#FF0000" secondaryColour="#000000">
-        <label text="Work in Progress"></label>
+    <category name="%{BKY_CATEGORY_CONTROL}" id="control" colour="#FFAB19" secondaryColour="#CF8B17">
+        <block type="control_wait">
+            <value name="DURATION">
+                <shadow type="math_positive_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
         ${categorySeparator}
     </category>
     `;
