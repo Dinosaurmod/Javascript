@@ -1,0 +1,6 @@
+{
+    "/*sleep*/": {
+        "snippet": "/*sleep*/ await new Promise(resolve => setTimeout(resolve, ${1:1}) * 1000))",
+        "description": "(1) 秒待つ"
+    }
+}

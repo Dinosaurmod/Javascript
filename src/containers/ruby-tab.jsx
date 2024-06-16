@@ -5,25 +5,25 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {injectIntl, intlShape} from 'react-intl';
 import {connect} from 'react-redux';
-/*import AceEditor from 'react-ace';
+import AceEditor from 'react-ace';
 import {
     rubyCodeShape,
     updateRubyCode,
     updateRubyCodeTarget
-} from '../reducers/ruby-code';*/
+} from '../reducers/ruby-code';
 import VM from 'scratch-vm';
 import {BLOCKS_TAB_INDEX} from '../reducers/editor-tab';
 
-/*import RubyToBlocksConverterHOC from '../lib/ruby-to-blocks-converter-hoc.jsx';
+import RubyToBlocksConverterHOC from '../lib/ruby-to-blocks-converter-hoc.jsx';
 
 import 'ace-builds/src-noconflict/mode-ruby';
 import 'ace-builds/src-noconflict/theme-clouds';
 import 'ace-builds/src-noconflict/ext-searchbox';
 import 'ace-builds/src-noconflict/ext-language_tools';
 
-import SnippetsCompleter from './ruby-tab/snippets-completer';*/
+import SnippetsCompleter from './ruby-tab/snippets-completer';
 
-/*class JavascriptTab extends React.Component {
+class RubyTab extends React.Component {
     
     constructor (props) {
         super(props);
@@ -128,7 +128,7 @@ import SnippetsCompleter from './ruby-tab/snippets-completer';*/
     }
 }
 
-JavascriptTab.propTypes = {
+RubyTab.propTypes = {
     blocksTabVisible: PropTypes.bool,
     editingTarget: PropTypes.string,
     intl: intlShape.isRequired,
@@ -154,4 +154,4 @@ const mapDispatchToProps = dispatch => ({
 export default RubyToBlocksConverterHOC(injectIntl(connect(
     mapStateToProps,
     mapDispatchToProps
-)(JavascriptTab)));*/
+)(RubyTab)));
