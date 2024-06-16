@@ -1,4 +1,4 @@
-import bindAll from 'lodash.bindall';
+/*import bindAll from 'lodash.bindall';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {connect} from 'react-redux';
@@ -109,4 +109,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     () => ({}) // omit dispatch prop
-)(RubyDownloader);
+)(RubyDownloader);*/
