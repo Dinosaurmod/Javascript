@@ -426,10 +426,7 @@ const GUIComponent = props => {
                                     {soundsTabVisible ? <SoundTab vm={vm} /> : null}
                                 </TabPanel>
                                 <TabPanel className={tabClassNames.tabPanel}>
-                                    <RubyTab
-                                        isVisible={rubyTabVisible}
-                                        vm={vm}
-                                    />
+                                    {rubyTabVisible ? <RubyTab vm={vm} /> : null}
                                 </TabPanel>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     {filesTabVisible ? <FilesTab vm={vm} /> : null}
