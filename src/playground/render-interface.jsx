@@ -275,21 +275,10 @@ class Interface extends React.Component {
                     />
                     {isHomepage ? (
                         <React.Fragment>
-                            <div className={styles.section}>
-                                <ProjectInput />
-                            </div>
                             {(extraProjectInfo.accepted) && (
                             <div className={styles.remixWarningBox}>
-                                    <p>Penguinmod is currently working on getting a new server, meaning that you wont be temporarily able to see other projects.</p>
-                                    <p>Do not put in unapproved or invalid project ids or expect project loading to break.</p>
+                                    <p>This is an experimental page of Dinosaurmod.</p>
                             </div>
-                            )}
-                            {/* project not approved message */}
-                            {(!extraProjectInfo.accepted) && (
-                                <div className={styles.remixWarningBox}>
-                                    <p>This project is not approved or invalid.</p>
-                                    <p>Please refresh and go back here <a href='https://dinosaurmod.github.io'>DinosaurMod</a></p>
-                                </div>
                             )}
                             {/* remix info */}
                             {(extraProjectInfo.isRemix && remixedProjectInfo.loaded) && (
@@ -343,15 +332,6 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
-                            <VoteFrame id={projectId} darkmode={this.props.isDark}></VoteFrame>
-                            {extraProjectInfo.author && (
-                                <a
-                                    target="_blank"
-                                    href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
-                                >
-                                    View other projects by {extraProjectInfo.author}
-                                </a>
-                            )}
                             <div className={styles.section}>
                                 <p>
                                     <FormattedMessage
