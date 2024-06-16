@@ -53,6 +53,7 @@
     "localforage": "^1.10.0",
     "lodash.bindall": "4.4.0",
     "lodash.debounce": "4.0.8",
+    "lodash.defaultsdeep": "4.6.1",
     "lodash.omit": "4.5.0",
     "lodash.throttle": "4.0.1",
     "md": "^0.6.0",
@@ -143,6 +144,7 @@
     "webpack": "4.46.0",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.2",
+    "webpack-pwa-manifest": "^4.3.0",
     "webpack-sources": "3.2.3"
   },
   "jest": {
