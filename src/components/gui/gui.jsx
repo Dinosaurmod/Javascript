@@ -371,7 +371,7 @@ const GUIComponent = props => {
                                             id="gui.gui.soundsTab"
                                         />
                                     </Tab>
-                                    <Tab
+                                    {/*<Tab
                                         className={tabClassNames.tab}
                                         onClick={onActivateJavascriptTab}
                                     >
@@ -383,6 +383,20 @@ const GUIComponent = props => {
                                             defaultMessage="Javascript"
                                             description="Button to get to the javascript panel"
                                             id="gui.gui.javascriptTab"
+                                        />
+                                    </Tab>*/}
+                                    <Tab
+                                        className={tabClassNames.tab}
+                                        onClick={onActivateFilesTab}
+                                    >
+                                        <img
+                                            draggable={false}
+                                            src={filesIconIcon}
+                                        />
+                                        <FormattedMessage
+                                            defaultMessage="Files"
+                                            description="Button to get to the files panel"
+                                            id="gui.gui.filesTab"
                                         />
                                     </Tab>
                                 </TabList>
