@@ -6,6 +6,7 @@
   "scripts": {
     "buildall": "npm run build && npm run deploy",
     "setup-opal": "node ./scripts/make-setup-opal.js",
+    "setup-scratch-vm": "cd node_modules/scratch-vm && npm install && $(npm bin)/webpack --colors --bail --silent",
     "build": "npm run clean && webpack --colors --bail",
     "clean": "rimraf ./build && mkdirp build && rimraf ./dist && mkdirp dist",
     "deploy": "npm uni gh-pages && npm i gh-pages -g && gh-pages -d src",
@@ -146,7 +147,8 @@
   "jest": {
     "setupFiles": [
       "raf/polyfill",
-      "<rootDir>/test/helpers/enzyme-setup.js"
+      "<rootDir>/test/helpers/enzyme-setup.js",
+      "<rootDir>/static/javascripts/setup-opal.js"
     ],
     "testPathIgnorePatterns": [
       "src/test.js"
