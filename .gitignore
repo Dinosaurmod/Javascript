@@ -17,3 +17,6 @@ npm-*
 # Generated translation files
 /translations
 /locale
+
+# generated opal files
+/static/javascripts/setup-opal.js

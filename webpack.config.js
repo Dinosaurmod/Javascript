@@ -277,6 +277,14 @@ module.exports = [
                 new CopyWebpackPlugin({
                     patterns: [
                         {
+                            from: 'static/javascripts/setup-opal.js',
+                            to: 'static/javascripts/setup-opal.js'
+                        }
+                    ]
+                }),
+                new CopyWebpackPlugin({
+                    patterns: [
+                        {
                             from: 'node_modules/scratch-blocks/media',
                             to: 'static/blocks-media'
                         }
