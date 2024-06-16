@@ -1,5 +1,3 @@
-// credits to smallruby3-gui
-
 import bindAll from 'lodash.bindall';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -24,7 +22,6 @@ import 'ace-builds/src-noconflict/ext-language_tools';
 import SnippetsCompleter from './ruby-tab/snippets-completer';
 
 class RubyTab extends React.Component {
-    
     constructor (props) {
         super(props);
         bindAll(this, [
@@ -102,8 +99,8 @@ class RubyTab extends React.Component {
                 fontSize={16}
                 height="inherit"
                 markers={markers}
-                mode="javascript"
-                name="javascript-editor"
+                mode="ruby"
+                name="ruby-editor"
                 ref={this.setAceEditorRef}
                 setOptions={{
                     tabSize: 2,
