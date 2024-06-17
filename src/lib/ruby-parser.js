@@ -1,5 +1,5 @@
 /* global Opal */
-import Opal from 'opal'
+import _ from 'lodash'
 
 // HACK: monkey patch to get Parser::SyntaxError exception
 const patch = Opal.String.$new(`
