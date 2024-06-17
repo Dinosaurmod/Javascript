@@ -1,4 +1,5 @@
 /* global Opal */
+import Opal from 'opal'
 
 // HACK: monkey patch to get Parser::SyntaxError exception
 const patch = Opal.String.$new(`
