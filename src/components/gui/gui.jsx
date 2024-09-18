@@ -131,7 +131,7 @@ const GUIComponent = props => {
         onToggleLoginOpen,
         onActivateCostumesTab,
         onActivateSoundsTab,
-        onActivateJavascriptTab,
+        onActivateRubyTab,
         onActivateFilesTab,
         onActivateTab,
         onClickLogo,
@@ -373,7 +373,7 @@ const GUIComponent = props => {
                                     </Tab>
                                     <Tab
                                         className={tabClassNames.tab}
-                                        onClick={onActivateJavascriptTab}
+                                        onClick={onActivateRubyTab}
                                     >
                                         <img
                                             draggable={false}
@@ -502,7 +502,7 @@ GUIComponent.propTypes = {
     logo: PropTypes.string,
     onActivateCostumesTab: PropTypes.func,
     onActivateSoundsTab: PropTypes.func,
-    onActivateJavascriptTab: PropTypes.func,
+    onActivateRubyTab: PropTypes.func,
     onActivateFilesTab: PropTypes.func,
     onActivateTab: PropTypes.func,
     onClickAccountNav: PropTypes.func,

@@ -11,6 +11,8 @@ import FileSystemAPI from '../lib/tw-filesystem-api';
 import {getIsShowingProject} from '../reducers/project-state';
 import log from '../lib/log';
 
+import RubyToBlocksConverterHOC from '../lib/ruby-to-blocks-converter-hoc.jsx';
+
 // from sb-file-uploader-hoc.jsx
 const getProjectTitleFromFilename = fileInputFilename => {
     if (!fileInputFilename) return '';
@@ -303,7 +305,7 @@ const mapDispatchToProps = dispatch => ({
     onProjectUnchanged: () => dispatch(setProjectUnchanged())
 });
 
-export default connect(
+export default RubyToBlocksConverterHOC(injectIntlconnect(
     mapStateToProps,
     mapDispatchToProps
-)(SB3Downloader);
+)(SB3Downloader));

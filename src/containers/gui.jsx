@@ -16,7 +16,8 @@ import {
     BLOCKS_TAB_INDEX,
     COSTUMES_TAB_INDEX,
     SOUNDS_TAB_INDEX,
-    FILES_TAB_INDEX
+    FILES_TAB_INDEX,
+    RUBY_TAB_INDEX
 } from '../reducers/editor-tab';
 
 import {
@@ -154,6 +155,7 @@ const mapStateToProps = state => {
         projectId: state.scratchGui.projectState.projectId,
         soundsTabVisible: state.scratchGui.editorTab.activeTabIndex === SOUNDS_TAB_INDEX,
         filesTabVisible: state.scratchGui.editorTab.activeTabIndex === FILES_TAB_INDEX,
+        rubyTabVisible: state.scratchGui.editorTab.activeTabIndex === RUBY_TAB_INDEX,
         targetIsStage: (
             state.scratchGui.targets.stage &&
             state.scratchGui.targets.stage.id === state.scratchGui.targets.editingTarget
