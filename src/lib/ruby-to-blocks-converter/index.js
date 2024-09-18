@@ -32,15 +32,6 @@ const CORE_EXTENSIONS = [
     'argument',
     'colour',
     'control',
-    'data',
-    'event',
-    'looks',
-    'math',
-    'motion',
-    'operator',
-    'procedures',
-    'sensing',
-    'sound'
 ];
 
 // from scratch-vm/src/serialization/sb3.js
